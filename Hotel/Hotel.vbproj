@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2FCE533-BAC8-4FF3-A7AF-2EDB370D70C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Hotel.My.MyApplication</StartupObject>
+    <RootNamespace>Hotel</RootNamespace>
+    <AssemblyName>Hotel</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Hotel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Hotel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\ClsCtlBill.vb" />
+    <Compile Include="Controller\ClsCtlDetail_Res.vb" />
+    <Compile Include="Controller\ClsCtlKamar.vb" />
+    <Compile Include="Controller\ClsCtlKaryawan.vb" />
+    <Compile Include="Controller\ClsCtlReservasi.vb" />
+    <Compile Include="Controller\ClsCtlTamu.vb" />
+    <Compile Include="Controller\ClsCtlTipeKamar.vb" />
+    <Compile Include="Controller\InfProses.vb" />
+    <Compile Include="Entitas\ClsEntBill.vb" />
+    <Compile Include="Entitas\ClsEntDetail_Res.vb" />
+    <Compile Include="Entitas\ClsEntKamar.vb" />
+    <Compile Include="Entitas\ClsEntKaryawan.vb" />
+    <Compile Include="Entitas\ClsEntReservasi.vb" />
+    <Compile Include="Entitas\ClsEntTamu.vb" />
+    <Compile Include="Entitas\ClsEntTipeKamar.vb" />
+    <Compile Include="Form\Admin\CRBill.Designer.vb">
+      <DependentUpon>CRBill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\CRBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\CREmployee.Designer.vb">
+      <DependentUpon>CREmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\CREmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\CRGuest.Designer.vb">
+      <DependentUpon>CRGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\CRGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\CRReservation.Designer.vb">
+      <DependentUpon>CRReservation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\CRReservation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\CRRooms.Designer.vb">
+      <DependentUpon>CRRooms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\CRRooms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\DataEmployee.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEmployee.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\DataGuest.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataGuest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\DataPayment.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataPayment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\DataReservation.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataReservation.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\DataRooms.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataRooms.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmGuest.Designer.vb">
+      <DependentUpon>FrmGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmTpRoom.Designer.vb">
+      <DependentUpon>FrmTpRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmTpRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmBill.Designer.vb">
+      <DependentUpon>FrmBill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmAddRoom.Designer.vb">
+      <DependentUpon>FrmAddRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmAddRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\CRNota.Designer.vb">
+      <DependentUpon>CRNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\CRNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\NotaReservation.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaReservation.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="try\Class1.vb" />
+    <Compile Include="try\FrmCoba.Designer.vb">
+      <DependentUpon>FrmCoba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="try\FrmCoba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmEmployee.Designer.vb">
+      <DependentUpon>FrmEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmReservation.Designer.vb">
+      <DependentUpon>FrmReservation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmReservation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmRoomManagement.Designer.vb">
+      <DependentUpon>FrmRoomManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmRoomManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmUpdateRes.Designer.vb">
+      <DependentUpon>FrmUpdateRes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmUpdateRes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmHome.Designer.vb">
+      <DependentUpon>FrmHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmUpdateRoom.Designer.vb">
+      <DependentUpon>FrmUpdateRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\FrmUpdateRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="try\FormTRY.Designer.vb">
+      <DependentUpon>FormTRY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="try\FormTRY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmInformasi.Designer.vb">
+      <DependentUpon>FrmInformasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmInformasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmCheckin.Designer.vb">
+      <DependentUpon>FrmCheckin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmCheckin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmPayment.Designer.vb">
+      <DependentUpon>FrmPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmReview.Designer.vb">
+      <DependentUpon>FrmReview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmReview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="try\Room.Designer.vb">
+      <DependentUpon>Room.vb</DependentUpon>
+    </Compile>
+    <Compile Include="try\Room.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="try\Room1.Designer.vb">
+      <DependentUpon>Room1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="try\Room1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmRooms.Designer.vb">
+      <DependentUpon>FrmRooms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmRooms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmThankyou.Designer.vb">
+      <DependentUpon>FrmThankyou.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reservasi\FrmThankyou.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\ModKoneksiDB.vb" />
+    <Compile Include="Global\ModObjekdanFungsi.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\Admin\CRBill.resx">
+      <DependentUpon>CRBill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\CREmployee.resx">
+      <DependentUpon>CREmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\CRGuest.resx">
+      <DependentUpon>CRGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\CRReservation.resx">
+      <DependentUpon>CRReservation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\CRRooms.resx">
+      <DependentUpon>CRRooms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\DataEmployee.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DataEmployee.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\DataGuest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DataGuest.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\DataPayment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DataPayment.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\DataReservation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DataReservation.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\DataRooms.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DataRooms.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmGuest.resx">
+      <DependentUpon>FrmGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmTpRoom.resx">
+      <DependentUpon>FrmTpRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmBill.resx">
+      <DependentUpon>FrmBill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmAddRoom.resx">
+      <DependentUpon>FrmAddRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\CRNota.resx">
+      <DependentUpon>CRNota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\NotaReservation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaReservation.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="try\FrmCoba.resx">
+      <DependentUpon>FrmCoba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmEmployee.resx">
+      <DependentUpon>FrmEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmReservation.resx">
+      <DependentUpon>FrmReservation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmRoomManagement.resx">
+      <DependentUpon>FrmRoomManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmUpdateRes.resx">
+      <DependentUpon>FrmUpdateRes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmUpdateRoom.resx">
+      <DependentUpon>FrmUpdateRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\FrmCheckin.resx">
+      <DependentUpon>FrmCheckin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmHome.resx">
+      <DependentUpon>FrmHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="try\FormTRY.resx">
+      <DependentUpon>FormTRY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\FrmInformasi.resx">
+      <DependentUpon>FrmInformasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Admin\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\FrmPayment.resx">
+      <DependentUpon>FrmPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\FrmReview.resx">
+      <DependentUpon>FrmReview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="try\Room.resx">
+      <DependentUpon>Room.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="try\Room1.resx">
+      <DependentUpon>Room1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\FrmRooms.resx">
+      <DependentUpon>FrmRooms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reservasi\FrmThankyou.resx">
+      <DependentUpon>FrmThankyou.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\writing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\garbage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\right-arrow %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\left-arrow %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ok-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\left-arrow %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8_gender_neutral_user_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8_password_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8_circled_chevron_left_30pxx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8_create_new_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8_synchronize_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8_trash_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\h.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\add.png" />
+    <None Include="Images\Logo.png" />
+    <None Include="Resources\BNI.png" />
+    <None Include="Resources\BCA.png" />
+    <None Include="Resources\MANDIRI.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\password.png" />
+    <Content Include="Resources\Personal.ico" />
+    <None Include="Ico\account2.png" />
+    <Content Include="Ico\add.png" />
+    <Content Include="Ico\back.png" />
+    <Content Include="Ico\cancel.png" />
+    <Content Include="Ico\delete.png" />
+    <Content Include="Ico\delete2.png" />
+    <Content Include="Ico\next.png" />
+    <Content Include="Ico\print.png" />
+    <Content Include="Ico\print2.png" />
+    <Content Include="Ico\save.png" />
+    <Content Include="Ico\save2.png" />
+    <Content Include="Ico\update.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
